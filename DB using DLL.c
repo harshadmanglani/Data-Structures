@@ -3,19 +3,20 @@
 #include<string.h>
 #define newvarl printf("\n");
 
-typedef struct student{
+typedef struct student					//student structure for the database 
+{
 	char name[50];
 	char branch[10];
 	int roll;
 }student;
 
 
-typedef struct node{
+typedef struct node{					
 	student obj;
 	struct node *next, *prev;
 }node;
 
-node* getnode(node* newvar, student data)
+node* getnode(node* newvar, student data)		//helper function to dynamically allocate new nodes
 {
 	newvar = (node*)malloc(sizeof(node));
 	newvar->obj = data;
@@ -34,7 +35,7 @@ node* addnode(node* head, node* newvar, student data, int pos)
 		temp = temp->next;
 		i++;
 	}
-	if(pos==1)
+	if(pos==1)					//add to the head of the list
 	{
 		newvar->next = head;
 		head->prev = newvar;
@@ -93,7 +94,7 @@ void deletenode(node* head, int pos)
 		head->obj.roll = -1;
 		return;
 	}
-
+	//need to work on a way to fill these values without adding a new node and letting this remain.
 	if(pos==1 && head->next!=NULL)
 	{
 		head = head->next;
