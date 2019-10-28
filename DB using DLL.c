@@ -1,7 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
-#define newvarl printf("\n");
+#define newl printf("\n");
 
 typedef struct student					//student structure for the database 
 {
@@ -53,10 +53,10 @@ node* addnode(node* head, node* newvar, student data, int pos)
 
 void displaystud(student var)
 {
-	printf("Name: "); printf("%s", var.name); newvarl
-	printf("Branch: "); printf("%s", var.branch);newvarl
-	printf("Roll: "); printf("%d", var.roll);newvarl
-	newvarl newvarl
+	printf("Name: "); printf("%s", var.name); newl
+	printf("Branch: "); printf("%s", var.branch);newl
+	printf("Roll: "); printf("%d", var.roll);newl
+	newl newl
 }	
 
 void display(node* head)
